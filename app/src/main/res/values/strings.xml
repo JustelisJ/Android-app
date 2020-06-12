@@ -16,7 +16,10 @@
     <string name="home_second">Home Second</string>
     <string name="author">Author: Justinas Jancys</string>
     <string name="Class">AND</string>
+<<<<<<< HEAD
     <string name="extended_fab_content_desc">Idk, this is a fab. Is that enough?</string>
     <string name="extended_fab_label">+</string>
     <string name="title">Title</string>
+=======
+>>>>>>> parent of ef5eba8... MVC implemented
 </resources>

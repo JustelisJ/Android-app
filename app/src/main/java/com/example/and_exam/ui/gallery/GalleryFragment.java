@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,11 +19,8 @@ import com.bumptech.glide.Glide;
 import com.example.and_exam.MainActivity;
 import com.example.and_exam.Model.Meme;
 import com.example.and_exam.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GalleryFragment extends Fragment {
 
@@ -34,6 +30,7 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+<<<<<<< HEAD
         galleryViewModel = new ViewModelProvider(this).get(GalleryViewModel.class);
         galleryViewModel.getAllMemes().observe(this, new Observer<List<Meme>>() {
             @Override
@@ -42,6 +39,10 @@ public class GalleryFragment extends Fragment {
             }
         });
 
+=======
+        galleryViewModel =
+                ViewModelProviders.of(this).get(GalleryViewModel.class);
+>>>>>>> parent of ef5eba8... MVC implemented
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
 
         memeList = root.findViewById(R.id.rv);
@@ -58,10 +59,5 @@ public class GalleryFragment extends Fragment {
         memeList.setAdapter(memeAdabter);
 
         return root;
-    }
-
-    public void refreshMemes(View v)
-    {
-        galleryViewModel.refresh();
     }
 }

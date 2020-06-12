@@ -16,5 +16,4 @@
             android:id="@+id/rv"/>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

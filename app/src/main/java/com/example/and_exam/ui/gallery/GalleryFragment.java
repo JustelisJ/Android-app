@@ -4,20 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.example.and_exam.MainActivity;
-import com.example.and_exam.Model.Meme;
+import com.example.and_exam.Meme;
 import com.example.and_exam.R;
 
 import java.util.ArrayList;
@@ -25,43 +19,29 @@ import java.util.ArrayList;
 public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
-    RecyclerView memeList;
-    MemeAdapter memeAdabter;
+
+    RecyclerView mPokemonList;
+    MemeAdapter mMemeAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        galleryViewModel = new ViewModelProvider(this).get(GalleryViewModel.class);
-        galleryViewModel.getAllMemes().observe(this, new Observer<List<Meme>>() {
-            @Override
-            public void onChanged(List<Meme> memes) {
-                Glide.with(getActivity()).load(pokemon.getImageUrl()).into(imageView);
-            }
-        });
-
-=======
         galleryViewModel =
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
->>>>>>> parent of ef5eba8... MVC implemented
-=======
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
->>>>>>> parent of ef5eba8... MVC implemented
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
 
-        memeList = root.findViewById(R.id.rv);
-        memeList.hasFixedSize();
-        memeList.setLayoutManager(new LinearLayoutManager(getContext()));
+        mPokemonList = root.findViewById(R.id.rv);
+        mPokemonList.hasFixedSize();
+        mPokemonList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ArrayList<Meme> memes = new ArrayList<>();
-        memes.add(new Meme("Very first meme", R.drawable.m1));
-        memes.add(new Meme("Very first meme x2", R.drawable.m2));
-        memes.add(new Meme("Very first meme x3", R.drawable.m3));
-        memes.add(new Meme("Very first meme x4", R.drawable.m4));
+        memes.add(new Meme("First meme", R.drawable.m1));
+        memes.add(new Meme("First meme x2", R.drawable.m2));
+        memes.add(new Meme("First meme x3", R.drawable.m3));
+        memes.add(new Meme("First meme x4", R.drawable.m4));
 
-        memeAdabter = new MemeAdapter(memes);
-        memeList.setAdapter(memeAdabter);
+        mMemeAdapter = new MemeAdapter(memes);
+        mPokemonList.setAdapter(mMemeAdapter);
+
 
         return root;
     }

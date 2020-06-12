@@ -9,51 +9,49 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.example.and_exam.MainActivity;
-import com.example.and_exam.Model.Meme;
+import com.example.and_exam.Meme;
 import com.example.and_exam.R;
 
 import java.util.ArrayList;
 
-public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder> {
+class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
 
-    private ArrayList<Meme> memes;
+    private ArrayList<Meme> mMemes;
 
-    public MemeAdapter(ArrayList<Meme> _memes)
-    {
-        memes = _memes;
+    MemeAdapter(ArrayList<Meme> memes){
+        mMemes = memes;
+
     }
-
-    @Override
-    public int getItemCount() {
-        return memes.size();
-    }
-
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MemeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.meme_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(memes.get(position).getTitle());
-        holder.meme.setImageResource(memes.get(position).getPicId());
+    public void onBindViewHolder(@NonNull MemeAdapter.ViewHolder holder, int position) {
+        holder.title.setText(mMemes.get(position).getTitle());
+        holder.meme.setImageResource(mMemes.get(position).getIconId());
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemCount() {
+        return mMemes.size();
+    }
 
+    class ViewHolder extends RecyclerView.ViewHolder
+    {
         TextView title;
         ImageView meme;
 
-        ViewHolder(@NonNull View itemView) {
+        ViewHolder(View itemView)
+        {
             super(itemView);
-            title = itemView.findViewById(R.id.tv_title);
-            meme = itemView.findViewById(R.id.iv_meme);
+            title = itemView.findViewById(R.id.tv_name);
+            meme = itemView.findViewById(R.id.iv_icon);
         }
     }
 }

@@ -10,7 +10,18 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_layouts">Layouts</string>
+    <string name="menu_resources">Resources</string>
 
     <string name="home_second">Home Second</string>
     <string name="title">Title</string>
+    <string name="layout_fragment_intro">In this fragment is is shown how to give views weight, so that the views automaticly split the remaining free space in the fragment and split it in 1:3 ratio</string>
+    <string name="resource_plus">+</string>
+    <string name="resource_minus">-</string>
+    <string name="resource_intro">This fragment is for the 2nd class of the semester. It shows a progress bar, a simple text retrieval on button click and switches</string>
+    <string name="resource_textView">This should be replaced with the text from the EditText once the button is pressed</string>
+    <string name="resource_editText">Write your text here that will replace TextView</string>
+    <string name="resource_button">Get text</string>
+    <string name="resource_switchExplanation">When the switch is active, the fragment background is light blue otherwise its pink</string>
+    <string name="resource_switch">Make background light blue</string>
 </resources>

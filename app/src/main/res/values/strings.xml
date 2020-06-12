@@ -18,4 +18,5 @@
     <string name="Class">AND</string>
     <string name="extended_fab_content_desc">Idk, this is a fab. Is that enough?</string>
     <string name="extended_fab_label">+</string>
+    <string name="title">Title</string>
 </resources>

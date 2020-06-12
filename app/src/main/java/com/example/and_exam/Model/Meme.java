@@ -2,19 +2,19 @@ package com.example.and_exam.Model;
 
 public class Meme {
     private String title;
-    private int picId;
+    private String url;
 
-    public Meme(String title, int picId) {
+    public Meme(String title, String url) {
         this.title = title;
-        this.picId = picId;
+        this.url = url;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getPicId() {
-        return picId;
+    public String getUrl() {
+        return url;
     }
 
 }

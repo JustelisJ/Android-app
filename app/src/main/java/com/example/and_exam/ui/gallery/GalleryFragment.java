@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.and_exam.MainActivity;
 import com.example.and_exam.Model.Meme;
 import com.example.and_exam.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -35,7 +38,7 @@ public class GalleryFragment extends Fragment {
         galleryViewModel.getAllMemes().observe(this, new Observer<List<Meme>>() {
             @Override
             public void onChanged(List<Meme> memes) {
-
+                Glide.with(getActivity()).load(pokemon.getImageUrl()).into(imageView);
             }
         });
 

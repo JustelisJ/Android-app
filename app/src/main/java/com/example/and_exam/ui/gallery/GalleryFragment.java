@@ -31,6 +31,7 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         galleryViewModel = new ViewModelProvider(this).get(GalleryViewModel.class);
         galleryViewModel.getAllMemes().observe(this, new Observer<List<Meme>>() {
             @Override
@@ -39,6 +40,10 @@ public class GalleryFragment extends Fragment {
             }
         });
 
+=======
+        galleryViewModel =
+                ViewModelProviders.of(this).get(GalleryViewModel.class);
+>>>>>>> parent of ef5eba8... MVC implemented
 =======
         galleryViewModel =
                 ViewModelProviders.of(this).get(GalleryViewModel.class);

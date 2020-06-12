@@ -24,5 +24,9 @@
             android:id="@+id/nav_resources"
             android:icon="@drawable/abc_vector_test"
             android:title="@string/menu_resources" />
+        <item
+            android:id="@+id/nav_intents"
+            android:icon="@drawable/abc_vector_test"
+            android:title="@string/menu_intents" />
     </group>
 </menu>

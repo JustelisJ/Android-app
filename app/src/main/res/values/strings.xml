@@ -12,6 +12,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_layouts">Layouts</string>
     <string name="menu_resources">Resources</string>
+    <string name="menu_intents">Intents</string>
 
     <string name="home_second">Home Second</string>
     <string name="title">Title</string>
@@ -24,4 +25,7 @@
     <string name="resource_button">Get text</string>
     <string name="resource_switchExplanation">When the switch is active, the fragment background is light blue otherwise its pink</string>
     <string name="resource_switch">Make background light blue</string>
+    <string name="intent_sendEmail">Send an email to mom</string>
+    <string name="intent_sendText">Send a message to another activity</string>
+    <string name="send">Send</string>
 </resources>

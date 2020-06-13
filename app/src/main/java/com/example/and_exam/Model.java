@@ -41,7 +41,7 @@ public class Model{
 
     public ArrayList<Meme> getPostsFromReddit()
     {
-        String myUrl = "https://www.reddit.com/r/dankmemes/top.json?count=100";
+        String myUrl = "https://www.reddit.com/r/dankmemes/top.json?count=25";
         String result = null;
         ArrayList<Meme> memes = new ArrayList<Meme>();
 

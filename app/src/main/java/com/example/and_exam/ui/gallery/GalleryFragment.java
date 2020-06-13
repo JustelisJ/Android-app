@@ -34,12 +34,12 @@ public class GalleryFragment extends Fragment {
         mPokemonList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ArrayList<Meme> memes = new ArrayList<>();
-        memes.add(new Meme("First meme", R.drawable.m1));
-        memes.add(new Meme("First meme x2", R.drawable.m2));
-        memes.add(new Meme("First meme x3", R.drawable.m3));
-        memes.add(new Meme("First meme x4", R.drawable.m4));
+        memes.add(new Meme("First meme", "https://i.redd.it/hb39iedntm451.png"));
+        memes.add(new Meme("First meme x2", "https://i.redd.it/o2nepndrmm451.png"));
+        memes.add(new Meme("First meme x3", "https://i.redd.it/stdzv12xyl451.jpg"));
+        memes.add(new Meme("First meme x4", "https://i.redd.it/qpy2jlrokm451.jpg"));
 
-        mMemeAdapter = new MemeAdapter(memes);
+        mMemeAdapter = new MemeAdapter(memes, getContext());
         mPokemonList.setAdapter(mMemeAdapter);
 
 

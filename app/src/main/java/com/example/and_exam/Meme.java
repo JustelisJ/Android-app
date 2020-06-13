@@ -1,20 +1,32 @@
 package com.example.and_exam;
 
-public class Meme {
-    private String mTitle;
-    private int mIconId;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-    public Meme(String name, int iconId) {
-        mTitle = name;
-        mIconId = iconId;
+import java.sql.Date;
+
+@Entity(tableName = "favorites_table")
+public class Meme {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    private String mTitle;
+    private String url;
+
+    public Meme(String title, String url) {
+        mTitle = title;
+        this.url = url;
     }
 
     public String getTitle() {
         return mTitle;
     }
 
-    public int getIconId() {
-        return mIconId;
+    public String getUrl() {
+        return url;
     }
+
+    public int getId(){return id;}
+
+    public void setId(int id){this.id = id;}
 
 }

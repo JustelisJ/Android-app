@@ -9,7 +9,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_favorites">Favorites</string>
     <string name="menu_layouts">Layouts</string>
     <string name="menu_resources">Resources</string>
     <string name="menu_intents">Intents</string>
@@ -28,4 +28,7 @@
     <string name="intent_sendEmail">Send an email to mom</string>
     <string name="intent_sendText">Send a message to another activity</string>
     <string name="send">Send</string>
+    <string name="home_fragment_intro">This app is to show what I, Justinas Jancys, have learned during this semester in the android course.</string>
+    <string name="home_fragment_intro2">They said that its impossible to make an app in just 3 days</string>
+    <string name="home_fragment_intro3">Look at me now MUM</string>
 </resources>

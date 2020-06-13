@@ -1,10 +1,8 @@
-package com.example.and_exam.ui.gallery;
+package com.example.and_exam.ui.favorites;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,33 +15,40 @@ import com.bumptech.glide.Glide;
 import com.example.and_exam.Meme;
 import com.example.and_exam.R;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
+public class FavoriteMemeAdapter extends RecyclerView.Adapter<FavoriteMemeAdapter.ViewHolder> {
 
     private ArrayList<Meme> mMemes;
-    final private ClickListener listener;
+    final private ClickOnFavoriteListener listener;
 
-    public MemeAdapter(ArrayList<Meme> memes, ClickListener listener){
-        mMemes = memes;
+    FavoriteMemeAdapter(LiveData<List<Meme>> memes, ClickOnFavoriteListener listener){
         this.listener = listener;
+        mMemes = new ArrayList<>();
+        List<Meme> _memes = memes.getValue();
+        for(int i = 0; i < _memes.size(); i++)
+        {
+            mMemes.add(_memes.get(i));
+        }
     }
+
 
     @NonNull
     @Override
-    public MemeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.meme_layout, parent, false);
         return new ViewHolder(view);
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MemeAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(mMemes.get(position).getTitle());
         //holder.meme.setImageResource(mMemes.get(position).getIconId());
         Glide.with(holder.meme.getContext()).load(mMemes.get(position).getUrl()).into(holder.meme);
+
     }
 
     @Override
@@ -51,23 +56,16 @@ public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
         return mMemes.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-    {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView title;
         ImageView meme;
-        ImageButton upvote;
-        ImageButton downvote;
         ImageButton favorite;
 
-        ViewHolder(View itemView)
-        {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             title = itemView.findViewById(R.id.tv_name);
             meme = itemView.findViewById(R.id.iv_icon);
-            //favorite = itemView.findViewById(R.id.favorite);
-
-            //favorite.setTag(R.drawable.heart);
-
             itemView.setOnClickListener(this);
         }
 
@@ -77,7 +75,7 @@ public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
         }
     }
 
-    public interface ClickListener {
+    public interface ClickOnFavoriteListener {
 
         void onFavoriteClicked(Meme meme);
 

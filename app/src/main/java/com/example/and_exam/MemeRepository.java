@@ -2,21 +2,24 @@ package com.example.and_exam;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MemeRepository {
 
     private MemeDao memeDao;
     private static MemeRepository instance;
-    private LiveData<List<Meme>> allMemes;
+    private Model model;
 
     private MemeRepository(Application application){
         MemeDatabase database = MemeDatabase.getInstance(application);
         memeDao = database.memeDao();
-        allMemes = memeDao.getAllMemes();
+        model = Model.getInstance();
     }
 
     public static synchronized MemeRepository getInstance(Application application)
@@ -27,29 +30,69 @@ public class MemeRepository {
     }
 
     public LiveData<List<Meme>> getAllMemes(){
-        return allMemes;
+        try {
+            return new GetAllMemesAsync(memeDao).execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Meme> getMayMaysFromReddit()
+    {
+        return model.getPostsFromReddit();
     }
 
     public void insert(Meme meme) {
-        memeDao.addNewFavorite(meme);
+        new AddMemeAsync(memeDao).execute(meme);
     }
 
     public void deleteAllNotes(Meme meme){
-        memeDao.deleteFavorite(meme);
+        new DeleteMemeAsync(memeDao).execute(meme);
     }
 
 
-    private static class InsertNoteAsync extends AsyncTask<Meme,Void,Void> {
-        private MemeDao noteDao;
+    private static class AddMemeAsync extends AsyncTask<Meme,Void,Void> {
+        private MemeDao memeDao;
 
-        private InsertNoteAsync(MemeDao noteDao) {
-            this.noteDao = noteDao;
+        private AddMemeAsync(MemeDao noteDao) {
+            this.memeDao = noteDao;
         }
 
         @Override
-        protected Void doInBackground(Meme... notes) {
-            noteDao.addNewFavorite(notes[0]);
+        protected Void doInBackground(Meme... memes) {
+            memeDao.addNewFavorite(memes[0]);
+            Log.i("ass", memes[0].toString());
             return null;
+        }
+    }
+
+    private static class DeleteMemeAsync extends AsyncTask<Meme,Void,Void> {
+        private MemeDao memeDao;
+
+        private DeleteMemeAsync(MemeDao noteDao) {
+            this.memeDao = noteDao;
+        }
+
+        @Override
+        protected Void doInBackground(Meme... memes) {
+            memeDao.deleteFavorite(memes[0]);
+            return null;
+        }
+    }
+
+    private static class GetAllMemesAsync extends AsyncTask<Void,Void,LiveData<List<Meme>>> {
+        private MemeDao memeDao;
+
+        private GetAllMemesAsync(MemeDao noteDao) {
+            this.memeDao = noteDao;
+        }
+
+        @Override
+        protected LiveData<List<Meme>> doInBackground(Void... voids) {
+            return memeDao.getAllMemes();
         }
     }
 

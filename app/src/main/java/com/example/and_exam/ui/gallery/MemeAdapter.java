@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import Meme;
+import com.example.and_exam.Model.Meme;
 import com.example.and_exam.R;
 
 import java.util.ArrayList;

@@ -10,9 +10,6 @@ public interface MemeDao {
     @Insert
     void addNewFavorite(Meme meme);
 
-    @Delete
-    void deleteFavorite(Meme meme);
-
     @Query("SELECT * FROM favorites_table")
     Meme[] getAllMemes();
 }

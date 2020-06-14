@@ -4,6 +4,7 @@ import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.and_exam.Model.Meme;
 import com.example.and_exam.Model.MemeDao;
 import com.example.and_exam.Model.MemeDatabase;
 import com.example.and_exam.Model.Model;
@@ -57,11 +58,6 @@ public class MemeRepository {
         new AddMemeAsync(memeDao).execute(meme);
     }
 
-    public void deleteAllNotes(Meme meme){
-        new DeleteMemeAsync(memeDao).execute(meme);
-    }
-
-
     private static class AddMemeAsync extends AsyncTask<Meme,Void,Void> {
         private MemeDao memeDao;
 
@@ -73,20 +69,6 @@ public class MemeRepository {
         protected Void doInBackground(Meme... memes) {
             memeDao.addNewFavorite(memes[0]);
             Log.i("ass", memes[0].toString());
-            return null;
-        }
-    }
-
-    private static class DeleteMemeAsync extends AsyncTask<Meme,Void,Void> {
-        private MemeDao memeDao;
-
-        private DeleteMemeAsync(MemeDao noteDao) {
-            this.memeDao = noteDao;
-        }
-
-        @Override
-        protected Void doInBackground(Meme... memes) {
-            memeDao.deleteFavorite(memes[0]);
             return null;
         }
     }

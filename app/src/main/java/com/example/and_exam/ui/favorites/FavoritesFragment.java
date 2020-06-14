@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import Meme;
+import com.example.and_exam.Model.Meme;
 import com.example.and_exam.R;
 
 import java.util.ArrayList;

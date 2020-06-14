@@ -7,8 +7,8 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import Meme;
 import com.example.and_exam.MemeRepository;
+import com.example.and_exam.Model.Meme;
 
 import java.util.ArrayList;
 

@@ -82,5 +82,22 @@ dependencies {
     //Thank god I found this - https://github.com/amitshekhariitbhu/Android-Debug-Database
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 
+    //JUnit
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+    //JUnit Rules
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+
+    //Espresso
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Mockito
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+
+    //Robolectric
+    testImplementation 'org.robolectric:robolectric:4.3'
+
+
 }
 

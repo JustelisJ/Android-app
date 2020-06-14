@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "80515010214",
+    "firebase_url": "https://and-exam-bruh.firebaseio.com",
+    "project_id": "and-exam-bruh",
+    "storage_bucket": "and-exam-bruh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80515010214:android:d5854f5b3d7ada0133ae67",
+        "android_client_info": {
+          "package_name": "com.example.and_exam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80515010214-o1jjij4t069op3kgv2grscm3ot8e1nf2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.and_exam",
+            "certificate_hash": "a5e770968b773c188b0ce11dcc0fdf6a23914812"
+          }
+        },
+        {
+          "client_id": "80515010214-irdhncj67641dedh4s8qfluvqm59rb6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH1r_E69c_R8ZABp7Gp0qU1T3fLDbmSS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80515010214-irdhncj67641dedh4s8qfluvqm59rb6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

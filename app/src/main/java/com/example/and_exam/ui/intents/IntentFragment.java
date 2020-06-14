@@ -77,8 +77,8 @@ public class IntentFragment extends Fragment {
         return root;
     }
 
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == LAUNCH_SECOND_ACTIVITY) {
@@ -90,5 +90,5 @@ public class IntentFragment extends Fragment {
                 reply2.setText(result);
             }
         }
-    }*/
+    }
 }

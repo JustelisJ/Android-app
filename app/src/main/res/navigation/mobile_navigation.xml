@@ -58,4 +58,10 @@
         android:name="com.example.and_exam.ui.intents.IntentFragment"
         android:label="@string/menu_intents"
         tools:layout="@layout/fragment_intents" />
+
+    <fragment
+        android:id="@+id/nav_authentication"
+        android:name="com.example.and_exam.ui.authentication.AuthenticationFragment"
+        android:label="@string/menu_authentication"
+        tools:layout="@layout/fragment_authentication" />
 </navigation>

@@ -16,7 +16,7 @@
 
     <string name="home_second">Home Second</string>
     <string name="title">Title</string>
-    <string name="layout_fragment_intro">In this fragment is is shown how to give views weight, so that the views automaticly split the remaining free space in the fragment and split it in 1:3 ratio</string>
+    <string name="layout_fragment_intro">In this fragment is shown how to give views weight, so that the views automatically split the remaining free space in the fragment and split it in 1:3 ratio</string>
     <string name="resource_plus">+</string>
     <string name="resource_minus">-</string>
     <string name="resource_intro">This fragment is for the 2nd class of the semester. It shows a progress bar, a simple text retrieval on button click and switches</string>
@@ -30,5 +30,7 @@
     <string name="send">Send</string>
     <string name="home_fragment_intro">This app is to show what I, Justinas Jancys, have learned during this semester in the android course.</string>
     <string name="home_fragment_intro2">They said that its impossible to make an app in just 3 days. I say its very possible, it just looks terrible.</string>
-    <string name="home_fragment_intro3">Sorry in advance for the ugly design. Im not an artist.</string>
+    <string name="home_fragment_intro3">Sorry in advance for the ugly design. Im not an artist and I didnt have much time to make it pretty :)</string>
+    <string name="menu_authentication">Authentication</string>
+    <string name="intent_comment">I know this looks discusting, but bear with me</string>
 </resources>

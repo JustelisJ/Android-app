@@ -94,6 +94,7 @@ public class AuthenticationFragment extends Fragment {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             FirebaseUser user = auth.getCurrentUser();
+                            assert user != null;
                             userEmail.setText(user.getEmail());
                             userID.setText(user.getUid());
                         }

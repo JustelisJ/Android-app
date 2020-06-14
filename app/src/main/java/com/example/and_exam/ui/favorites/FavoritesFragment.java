@@ -42,11 +42,11 @@ public class FavoritesFragment extends Fragment  implements FavoriteMemeAdapter.
         mMemeList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         //TODO: Get the favorite maymays from the local data storage, cuz it dont FUCKING work
-        //LiveData<List<Meme>> memes = favoritesViewModel.getAllFavoriteMemes();       //<--------This shit doesnt get anything for some reason
-        //Log.i("fuck", memes.getValue().toString());
+        LiveData<List<Meme>> memes = favoritesViewModel.getAllFavoriteMemes();       //<--------This shit doesnt get anything for some reason
+        Log.i("fuck", memes.getValue().toString());
 
-        //mMemeAdapter = new FavoriteMemeAdapter(memes, this);
-        //mMemeList.setAdapter(mMemeAdapter);
+        mMemeAdapter = new FavoriteMemeAdapter(memes, this);
+        mMemeList.setAdapter(mMemeAdapter);
 
         return root;
     }

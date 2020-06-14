@@ -24,9 +24,10 @@ import java.util.List;
 public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
 
     private ArrayList<Meme> mMemes;
-    final private ClickListener listener;
+    final private OnListItemClickListener listener;
 
-    public MemeAdapter(ArrayList<Meme> memes, ClickListener listener){
+    public MemeAdapter(ArrayList<Meme> memes, OnListItemClickListener listener)
+    {
         mMemes = memes;
         this.listener = listener;
     }
@@ -55,8 +56,8 @@ public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
     {
         TextView title;
         ImageView meme;
-        ImageButton upvote;
-        ImageButton downvote;
+        //ImageButton upvote;
+        //ImageButton downvote;
         ImageButton favorite;
 
         ViewHolder(View itemView)
@@ -73,13 +74,26 @@ public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
 
         @Override
         public void onClick(View v) {
-            listener.onFavoriteClicked(mMemes.get(getAdapterPosition()));
+
+            /*if(v.getId() == favorite.getId())
+            {
+                if((int)favorite.getTag() == R.drawable.heart) {
+                    favorite.setImageResource(R.drawable.heart1);
+                    favorite.setTag(R.drawable.heart1);
+                }
+                else {
+                    favorite.setImageResource(R.drawable.heart);
+                    favorite.setTag(R.drawable.heart);
+                }
+            }*/
+
+            listener.OnListItemClick(mMemes.get(getAdapterPosition()));
+
         }
     }
 
-    public interface ClickListener {
-
-        void onFavoriteClicked(Meme meme);
-
+    public interface OnListItemClickListener
+    {
+        void OnListItemClick(Meme meme);
     }
 }

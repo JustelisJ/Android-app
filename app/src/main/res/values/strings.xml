@@ -33,4 +33,5 @@
     <string name="home_fragment_intro3">Sorry in advance for the ugly design. Im not an artist and I didnt have much time to make it pretty :)</string>
     <string name="menu_authentication">Authentication</string>
     <string name="intent_comment">I know this looks discusting, but bear with me</string>
+    <string name="gallery_intro">This is the gallery. Here are displayed memes from r/dankmemes. To add something to the favorites, just tap on the meme itself.</string>
 </resources>

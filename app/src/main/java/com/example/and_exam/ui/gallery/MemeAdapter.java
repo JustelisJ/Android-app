@@ -1,25 +1,20 @@
 package com.example.and_exam.ui.gallery;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.and_exam.Meme;
+import Meme;
 import com.example.and_exam.R;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.ViewHolder>{
 

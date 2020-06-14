@@ -4,10 +4,11 @@ import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.lifecycle.LiveData;
+import com.example.and_exam.Model.MemeDao;
+import com.example.and_exam.Model.MemeDatabase;
+import com.example.and_exam.Model.Model;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MemeRepository {
@@ -29,9 +30,16 @@ public class MemeRepository {
         return instance;
     }
 
-    public LiveData<List<Meme>> getAllMemes(){
+    public ArrayList<Meme> getAllMemes(){
         try {
-            return new GetAllMemesAsync(memeDao).execute().get();
+            Meme[] list = new GetAllMemesAsync(memeDao).execute().get();
+            ArrayList<Meme> memes = new ArrayList<>();
+            for(int i = 0; i < list.length; i++)
+            {
+                if(list[i] != null)
+                    memes.add(list[i]);
+            }
+            return memes;
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -83,7 +91,7 @@ public class MemeRepository {
         }
     }
 
-    private static class GetAllMemesAsync extends AsyncTask<Void,Void,LiveData<List<Meme>>> {
+    private static class GetAllMemesAsync extends AsyncTask<Void,Void, Meme[]> {
         private MemeDao memeDao;
 
         private GetAllMemesAsync(MemeDao noteDao) {
@@ -91,7 +99,7 @@ public class MemeRepository {
         }
 
         @Override
-        protected LiveData<List<Meme>> doInBackground(Void... voids) {
+        protected Meme[] doInBackground(Void... voids) {
             return memeDao.getAllMemes();
         }
     }

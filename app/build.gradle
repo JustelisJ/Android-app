@@ -77,4 +77,10 @@ dependencies {
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.10.0'
+
+    //Android debug database
+    //Thank god I found this - https://github.com/amitshekhariitbhu/Android-Debug-Database
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
 }
+

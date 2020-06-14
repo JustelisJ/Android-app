@@ -8,29 +8,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.and_exam.Meme;
+import Meme;
 import com.example.and_exam.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FavoriteMemeAdapter extends RecyclerView.Adapter<FavoriteMemeAdapter.ViewHolder> {
 
     private ArrayList<Meme> mMemes;
     final private ClickOnFavoriteListener listener;
 
-    FavoriteMemeAdapter(LiveData<List<Meme>> memes, ClickOnFavoriteListener listener){
+    FavoriteMemeAdapter(ArrayList<Meme> memes, ClickOnFavoriteListener listener){
         this.listener = listener;
-        mMemes = new ArrayList<>();
-        List<Meme> _memes = memes.getValue();
-        for(int i = 0; i < _memes.size(); i++)
-        {
-            mMemes.add(_memes.get(i));
-        }
+        mMemes = memes;
     }
 
 

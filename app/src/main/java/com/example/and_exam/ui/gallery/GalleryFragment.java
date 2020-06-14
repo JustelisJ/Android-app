@@ -8,16 +8,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.and_exam.Meme;
+import Meme;
 import com.example.and_exam.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GalleryFragment extends Fragment implements MemeAdapter.OnListItemClickListener {
 

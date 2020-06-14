@@ -1,4 +1,4 @@
-package com.example.and_exam;
+package com.example.and_exam.Model;
 
 import android.content.Context;
 

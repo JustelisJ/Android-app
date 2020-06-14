@@ -6,13 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.and_exam.Meme;
+import Meme;
 import com.example.and_exam.MemeRepository;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class FavoritesViewModel extends AndroidViewModel {
     private Application mApplication;
@@ -31,7 +29,7 @@ public class FavoritesViewModel extends AndroidViewModel {
         return mText;
     }
 
-    public LiveData<List<Meme>> getAllFavoriteMemes(){
+    public ArrayList<Meme> getAllFavoriteMemes(){
         return repository.getAllMemes();
     }
 }
